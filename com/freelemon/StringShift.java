@@ -2,6 +2,7 @@ package com.freelemon;
 
 /**
  * Created by admin on 8/8/14.
+ * Shift a string by specific length. For example, before: "abcdefG", after: "defGabc".
  */
 public class StringShift {
 
