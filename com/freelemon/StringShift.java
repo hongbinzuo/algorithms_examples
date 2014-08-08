@@ -15,6 +15,8 @@ public class StringShift {
 
         ss.testThreeCopies(test, 6);
 
+        ss.testShiftUsingMatrix(test, 3);
+
     }
 
     public void shiftBruteForce(char[] str, int shiftLen){
@@ -49,7 +51,32 @@ public class StringShift {
         }
     }
 
-    
+    public void shiftUsingMatrix(char[] str, int length){
+        // XY = (X'Y')'
+        reverse(str, 0, length-1);
+        reverse(str, length, str.length-1);
+        reverse(str, 0, str.length-1);
+
+    }
+
+    public void reverse(char[] source, int p, int q){
+        
+        char c;
+        while ( p < q ){
+            c = source[p];
+            source[p] = source[q];
+            source[q] = c;
+            p++;
+            q--;
+        }
+    }
+
+    public void testShiftUsingMatrix(String str, int length){
+        char[] strArr = str.toCharArray();
+        shiftUsingMatrix(strArr, length);
+
+        System.out.println(String.valueOf(strArr));
+    }
 
     public void testThreeCopies(String input, int length){
 
