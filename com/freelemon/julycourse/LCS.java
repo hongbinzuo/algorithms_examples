@@ -1,4 +1,4 @@
-package com.freelemon;
+package com.freelemon.julycourse;
 
 /**
  * Created by admin on 8/7/14.

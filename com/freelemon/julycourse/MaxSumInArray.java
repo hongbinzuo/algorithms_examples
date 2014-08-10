@@ -1,6 +1,5 @@
-package com.freelemon;
+package com.freelemon.julycourse;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 /**

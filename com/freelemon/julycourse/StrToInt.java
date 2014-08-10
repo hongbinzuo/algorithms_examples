@@ -1,4 +1,4 @@
-package com.freelemon;
+package com.freelemon.julycourse;
 
 public class StrToInt{
     public static void main(String[] args){
