@@ -21,6 +21,10 @@ public class StringShift {
     }
 
     public void shiftBruteForce(char[] str, int shiftLen){
+
+        // Time complexity: O(kN)
+        // Space complexity: O(1)
+
         char c;
 
         for (int i = 0; i < shiftLen; i++) {
@@ -36,6 +40,9 @@ public class StringShift {
     }
 
     public void shiftThreeCopies(char[] str, int shiftLen){
+        // Time complexity: O(N)
+        // Space complexity: O(k)
+
         char[] tmp = new char[shiftLen];
         int N = str.length;
 
@@ -53,6 +60,9 @@ public class StringShift {
     }
 
     public void shiftUsingMatrix(char[] str, int length){
+        // Time complexity: O(N)
+        // Space complexity: O(1)
+
         // XY = (X'Y')'
         reverse(str, 0, length-1);
         reverse(str, length, str.length-1);
