@@ -4,6 +4,7 @@ package com.freelemon.julycourse;
  * Created by admin on 8/11/14.
  */
 public class Manacher {
+    
     /*
     // the code below is translated from C code in july course, but it doesn't work.
     // maybe double check if necessary
