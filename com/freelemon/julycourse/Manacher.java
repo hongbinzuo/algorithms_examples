@@ -4,7 +4,12 @@ package com.freelemon.julycourse;
  * Created by admin on 8/11/14.
  */
 public class Manacher {
-    
+    private static boolean debug = false;
+
+    //static {
+    //    debug = true;
+    //}
+
     /*
     // the code below is translated from C code in july course, but it doesn't work.
     // maybe double check if necessary
@@ -72,6 +77,9 @@ public class Manacher {
         System.out.print(result);
     }
 
+
+    // the original implementation in C/C++
+    // the source: http://leetcode.com/2011/11/longest-palindromic-substring-part-ii.html
     public static String getLongestPalindrome(String s){
         char[] T = preProcess(s).toCharArray();
 
@@ -96,13 +104,17 @@ public class Manacher {
             // if palindrome centered at i expand past R
             // adjust center based on expanded palindrome
 
-            System.out.println("i="+i +", P[i]="+P[i] + ", R="+R);
+            if ( debug ) {
+                System.out.println("i="+i +", P[i]="+P[i] + ", R="+R);
+            }
 
             if ( i + P[i] > R) {
                 C = i;
                 R = i + P[i];
 
-                System.out.println("Updated C="+C +", R="+R);
+                if ( debug ){
+                    System.out.println("Updated C="+C +", R="+R);
+                }
             }
 
 
@@ -117,9 +129,11 @@ public class Manacher {
                 centerIndex = i;
             }
         }
+        if ( debug ){
+            System.out.println("centerIndex: " + centerIndex);
+            System.out.println("maxLen: " + maxLen);
+        }
 
-        //System.out.println("centerIndex: " + centerIndex);
-        //System.out.println("maxLen: " + maxLen);
         int beginIndex = (centerIndex-1-maxLen)/2;
 
         return s.substring(beginIndex, beginIndex+maxLen);
